@@ -1,8 +1,11 @@
-function Book(title, author, pages, read) {
+const myLibrary = [];
+
+function Book(id, title, author, pages, read) {
     if (!new.target) {
         throw Error("You must use the 'new' operator to call the constructor")
     }
     
+    this.id = id;
     this.title = title;
     this.author = author;
     this.pages = pages;
@@ -13,4 +16,18 @@ function Book(title, author, pages, read) {
     };
 }
 
-const book1 = new Book("Harry potter", "J.K. Rowling", 254, false);
+function addBookToLibrary(title, author, pages, read) {
+    // Generate random unique book identifier
+    var id =  crypto.randomUUID();
+    var book = new Book(id, title, author, pages, read);
+
+    myLibrary.push(book);
+
+}
+
+
+addBookToLibrary("Harry potter", "J.K. Rowling", 254, false);
+console.log(myLibrary);
+for (let book in myLibrary) {
+    console.log(myLibrary[book]);
+}
