@@ -1,0 +1,40 @@
+.container {
+    height: 100%;
+    display: grid;
+    grid-template-areas: "header header"
+                         "display sidebar";
+    grid-template-rows: 1fr 5fr;
+
+    grid-template-columns: 3fr 1fr;
+}
+.btns,
+.header {
+    align-content: center;
+}
+
+.header {
+    height: 100px;
+    grid-area: header;
+
+    display: grid;
+    grid-template-columns: 1fr 250px;
+}
+.display {
+    grid-area: display;
+    display: grid;
+    padding: 2rem;
+    grid-template-columns: repeat(auto-fill, 350px);
+    gap: 20px;
+    background-color: green;
+}
+
+.sidebar {
+    grid-area: sidebar;
+}
+
+.bookCard {
+    width: 350px;
+    height: fit-content;
+    background-color: #fff;
+    
+}
