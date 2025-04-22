@@ -26,21 +26,21 @@
                 <form id="newBookForm" name="newBookForm" method="post">
                     <p>
                         <label for="title">Title</label>
-                        <input type="text" name="title" id="title">
+                        <input type="text" name="title" id="title" required>
                     </p>
                     <p>
                         <label for="author">Author</label>
-                        <input type="text" name="author" id="author">
+                        <input type="text" name="author" id="author" required>
                     </p>
                     <p>
                         <label for="pages">Pages</label>
-                        <input type="text" name="pages" id="pages">
+                        <input type="text" name="pages" id="pages" required>
                     </p>
                     <p>
                         <label for="read">Status</label>
                         <input type="checkbox" name="read" id="read">
                     </p>
-                    <button id="closeDialog">Close</button>
+                    <button type="submit" id="closeDialog">Close</button>
                 </form>
             </dialog>
         </div>
