@@ -17,20 +17,18 @@ exampleBtn.addEventListener("click", () => {
     displayLibraryBookCards(myLibrary);
 })
 
-function Book(id, title, author, pages, read) {
-    if (!new.target) {
-        throw Error("You must use the 'new' operator to call the constructor")
+class Book {
+    constructor(id, title, author, pages, read) {
+        this.id = id;
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
     }
-    
-    this.id = id;
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
 
-    this.info = function() {
+    info = function() {
         return `${this.title} by ${this.author}, ${this.pages} pages, ${genReadStatus(this.read)}`;
-    };
+    }
 }
 
 function genReadStatus(readBool) {
@@ -69,7 +67,6 @@ function displayLibraryBookCards(library) {
         dialog.showModal();
     });
     container.appendChild(newCard);
-    console.log(myLibrary);
 }
 
 
@@ -108,7 +105,6 @@ closeDialog.addEventListener("click", (e) => {
         const [title, author, pages, read] = getBookDetails(form);
 
         addBookToLibrary(title, author, pages, read);
-        console.log(`title: ${title}, author: ${author}, pages: ${pages}`)
         displayLibraryBookCards(myLibrary);
         dialog.close();
         e.preventDefault();
